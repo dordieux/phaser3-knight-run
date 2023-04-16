@@ -80,6 +80,30 @@ export class GameScene extends Phaser.Scene {
         this.player.x += 3;
       }
     }
+
+    if (!this.isEnemyAlive) {
+      this.time.addEvent({
+        delay: 1000,
+        callback: () => {
+          if (this.player.x > 150) {
+            this.background.tilePositionX += 4;
+            this.player.animation("run");
+            this.player.x -= 3;
+          }
+        },
+        loop: false,
+      });
+
+      if (this.player.x === 150) {
+        this.isEnemyAlive = true;
+        this.enemy = new Enemy({
+          scene: this,
+          x: 0,
+          y: 275,
+          texture: "skeleton",
+        });
+      }
+    }
   }
 
   private handleInput(): void {
