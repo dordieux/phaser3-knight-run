@@ -13,9 +13,10 @@ export class MainMenuScene extends Phaser.Scene {
     this.cameras.main.setBackgroundColor(0x98d687);
 
     this.load.pack("preload", "./assets/pack.json", "preload");
+    this.load.animation("knightAnimations", "./assets/animations/knight.json");
     this.load.animation(
-      "knightAnimations",
-      "./assets/animations/animations.json"
+      "skeletonAnimations",
+      "./assets/animations/skeleton.json"
     );
   }
 
@@ -27,13 +28,13 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   create(): void {
-    this.titleBitmapText = this.add.bitmapText(0, 200, "font", "TITLE", 30);
+    this.titleBitmapText = this.add.bitmapText(0, 150, "font", "TITLE", 30);
 
     this.titleBitmapText.x = this.getCenterXPositionOfBitmapText(
       this.titleBitmapText.width
     );
 
-    this.playBitmapText = this.add.bitmapText(0, 300, "font", "S: PLAY", 25);
+    this.playBitmapText = this.add.bitmapText(0, 200, "font", "S: PLAY", 25);
 
     this.playBitmapText.x = this.getCenterXPositionOfBitmapText(
       this.playBitmapText.width

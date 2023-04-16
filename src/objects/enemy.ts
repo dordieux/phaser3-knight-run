@@ -1,6 +1,6 @@
 import { IImageConstructor } from "../interfaces/image.interface";
 
-export class Player extends Phaser.GameObjects.Sprite {
+export class Enemy extends Phaser.GameObjects.Sprite {
   constructor(aParams: IImageConstructor) {
     super(aParams.scene, aParams.x, aParams.y, aParams.texture);
 
@@ -10,11 +10,9 @@ export class Player extends Phaser.GameObjects.Sprite {
 
   private initImage(): void {
     this.setScale(3);
-    this.anims.play("knightIdle", true);
-  }
-
-  updateStatus(status: "idle" | "run") {
-    this.anims.play("knight_" + status, true);
+    this.x = this.scene.scale.baseSize.width;
+    this.flipX = true;
+    this.anims.play("skeletonIdle", true);
   }
 
   update(): void {}

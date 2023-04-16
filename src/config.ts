@@ -4,8 +4,8 @@ import { MainMenuScene } from "./scenes/main-menu-scene";
 export const GameConfig: Phaser.Types.Core.GameConfig = {
   title: "Dino",
   version: "1.0",
-  width: 1000,
-  height: 600,
+  width: 600,
+  height: 400,
   type: Phaser.AUTO,
   parent: "game",
   scene: [MainMenuScene, GameScene],

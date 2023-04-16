@@ -1,7 +1,7 @@
 {
   "anims": [
     {
-      "key": "knightIdle",
+      "key": "knight_idle",
       "frames": [
         {
           "key": "knight",
@@ -28,7 +28,7 @@
       "repeat": -1
     },
     {
-      "key": "knightRun",
+      "key": "knight_run",
       "frames": [
         {
           "key": "knight",
@@ -67,7 +67,7 @@
       "repeat": -1
     },
     {
-      "key": "knightAttack",
+      "key": "knight_attack",
       "frames": [
         {
           "key": "knight",
@@ -94,7 +94,7 @@
       "repeat": -1
     },
     {
-      "key": "knightBlock",
+      "key": "knight_block",
       "frames": [
         {
           "key": "knight",
@@ -121,7 +121,7 @@
       "repeat": 0
     },
     {
-      "key": "knightDead",
+      "key": "knight_dead",
       "frames": [
         {
           "key": "knight",

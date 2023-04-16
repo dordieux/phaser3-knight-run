@@ -1,0 +1,82 @@
+{
+  "anims": [
+    {
+      "key": "skeletonIdle",
+      "frames": [
+        {
+          "key": "skeleton",
+          "frame": 39
+        },
+        {
+          "key": "skeleton",
+          "frame": 40
+        },
+        {
+          "key": "skeleton",
+          "frame": 41
+        },
+        {
+          "key": "skeleton",
+          "frame": 42
+        }
+      ],
+      "frameRate": 6,
+      "repeat": -1
+    },
+    {
+      "key": "skeletonRun",
+      "frames": [
+        {
+          "key": "skeleton",
+          "frame": 26
+        },
+        {
+          "key": "skeleton",
+          "frame": 27
+        },
+        {
+          "key": "skeleton",
+          "frame": 28
+        },
+        {
+          "key": "skeleton",
+          "frame": 29
+        },
+        {
+          "key": "skeleton",
+          "frame": 30
+        },
+        {
+          "key": "skeleton",
+          "frame": 31
+        },
+        {
+          "key": "skeleton",
+          "frame": 32
+        },
+        {
+          "key": "skeleton",
+          "frame": 33
+        },
+        {
+          "key": "skeleton",
+          "frame": 34
+        },
+        {
+          "key": "skeleton",
+          "frame": 35
+        },
+        {
+          "key": "skeleton",
+          "frame": 36
+        },
+        {
+          "key": "skeleton",
+          "frame": 37
+        }
+      ],
+      "frameRate": 10,
+      "repeat": -1
+    }
+  ]
+}
