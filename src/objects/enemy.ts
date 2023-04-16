@@ -14,6 +14,4 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     this.flipX = true;
     this.anims.play("skeletonIdle", true);
   }
-
-  update(): void {}
 }
