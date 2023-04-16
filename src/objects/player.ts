@@ -1,6 +1,7 @@
 import { IImageConstructor } from "../interfaces/image.interface";
 
 export class Player extends Phaser.GameObjects.Sprite {
+  declare body: Phaser.Physics.Arcade.Body;
   private jumpKey = this.scene.input.keyboard!.addKey(
     Phaser.Input.Keyboard.KeyCodes.SPACE
   );
@@ -9,22 +10,23 @@ export class Player extends Phaser.GameObjects.Sprite {
     super(aParams.scene, aParams.x, aParams.y, aParams.texture);
 
     this.initImage();
-    this.scrollFactorX = 100;
+    this.scene.physics.world.enable(this);
     this.scene.add.existing(this);
+    this.body.setSize(32, 32);
   }
 
   private initImage(): void {
     this.setScale(4);
-    this.updateStatus("idle");
+    this.animation("idle");
   }
 
-  updateStatus(status: "idle" | "run" | "jump") {
+  animation(status: "idle" | "run" | "jump" | "attack") {
     this.anims.play("knight_" + status, true);
   }
 
   update(): void {
     if (this.jumpKey.isDown) {
-      this.updateStatus("jump");
+      this.animation("jump");
     }
   }
 }

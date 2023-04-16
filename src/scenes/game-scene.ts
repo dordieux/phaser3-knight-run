@@ -2,6 +2,8 @@ import { Enemy, Player } from "../objects";
 
 export class GameScene extends Phaser.Scene {
   isEncounter = false;
+  isProgress = false;
+  isEnemyAlive = true;
 
   constructor(
     private background: Phaser.GameObjects.TileSprite,
@@ -48,21 +50,41 @@ export class GameScene extends Phaser.Scene {
   }
 
   update(): void {
+    this.physics.add.overlap(this.player, this.enemy, () => {
+      if (this.isProgress) {
+        this.player.animation("attack");
+        this.enemy.dead();
+      }
+
+      this.isProgress = false;
+      this.isEnemyAlive = false;
+      this.isEncounter = false;
+    });
+
+    if (this.isEnemyAlive && !this.isEncounter) {
+      if (this.enemy.x > 450) {
+        this.background.tilePositionX += 4;
+        this.enemy.x -= 2;
+        this.player.animation("run");
+      } else {
+        this.isEncounter = true;
+        this.player.animation("idle");
+      }
+    }
+
     if (this.isEncounter) {
-      this.player.update();
-    } else {
-      this.moveUntilEncount();
+      this.handleInput();
+
+      if (this.isProgress) {
+        this.player.animation("run");
+        this.player.x += 3;
+      }
     }
   }
 
-  private moveUntilEncount() {
-    if (this.enemy.x < 450) {
-      this.isEncounter = true;
-      this.player.updateStatus("idle");
-    } else {
-      this.background.tilePositionX += 4;
-      this.enemy.x -= 2;
-      this.player.updateStatus("run");
+  private handleInput(): void {
+    if (this.input.keyboard?.addKey(Phaser.Input.Keyboard.KeyCodes.A).isDown) {
+      this.isProgress = true;
     }
   }
 }

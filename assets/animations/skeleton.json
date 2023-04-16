@@ -1,7 +1,7 @@
 {
   "anims": [
     {
-      "key": "skeletonIdle",
+      "key": "skeleton_idle",
       "frames": [
         {
           "key": "skeleton",
@@ -24,7 +24,7 @@
       "repeat": -1
     },
     {
-      "key": "skeletonRun",
+      "key": "skeleton_run",
       "frames": [
         {
           "key": "skeleton",
@@ -77,6 +77,61 @@
       ],
       "frameRate": 10,
       "repeat": -1
+    },
+    {
+      "key": "skeleton_dead",
+      "frames": [
+        {
+          "key": "skeleton",
+          "frame": 13
+        },
+        {
+          "key": "skeleton",
+          "frame": 14
+        },
+        {
+          "key": "skeleton",
+          "frame": 15
+        },
+        {
+          "key": "skeleton",
+          "frame": 16
+        },
+        {
+          "key": "skeleton",
+          "frame": 17
+        },
+        {
+          "key": "skeleton",
+          "frame": 18
+        },
+        {
+          "key": "skeleton",
+          "frame": 19
+        },
+        {
+          "key": "skeleton",
+          "frame": 20
+        },
+        {
+          "key": "skeleton",
+          "frame": 21
+        },
+        {
+          "key": "skeleton",
+          "frame": 22
+        },
+        {
+          "key": "skeleton",
+          "frame": 23
+        },
+        {
+          "key": "skeleton",
+          "frame": 24
+        }
+      ],
+      "frameRate": 8,
+      "repeat": 0
     }
   ]
 }
