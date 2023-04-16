@@ -20,21 +20,21 @@ export class GameScene extends Phaser.Scene {
         0,
         this.game.config.width as number,
         this.game.config.height as number,
-        "background"
+        "background_forest"
       )
       .setOrigin(0, 0);
 
     this.player = new Player({
       scene: this,
       x: 150,
-      y: 200,
+      y: 275,
       texture: "player",
     });
 
     this.enemy = new Enemy({
       scene: this,
       x: 0,
-      y: 200,
+      y: 275,
       texture: "skeleton",
     });
 

@@ -9,7 +9,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
   }
 
   private initImage(): void {
-    this.setScale(3);
+    this.setScale(4);
     this.x = this.scene.scale.baseSize.width;
     this.flipX = true;
     this.anims.play("skeletonIdle", true);

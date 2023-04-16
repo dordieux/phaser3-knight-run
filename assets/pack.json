@@ -9,8 +9,13 @@
       },
       {
         "type": "image",
-        "key": "background",
-        "url": "./assets/images/bg.png"
+        "key": "background_forest",
+        "url": "./assets/images/forest.png"
+      },
+      {
+        "type": "image",
+        "key": "background_mist",
+        "url": "./assets/images/mist.png"
       },
       {
         "type": "spritesheet",
