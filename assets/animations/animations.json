@@ -1,0 +1,159 @@
+{
+  "anims": [
+    {
+      "key": "knightIdle",
+      "frames": [
+        {
+          "key": "knight",
+          "frame": 0
+        },
+        {
+          "key": "knight",
+          "frame": 1
+        },
+        {
+          "key": "knight",
+          "frame": 2
+        },
+        {
+          "key": "knight",
+          "frame": 3
+        },
+        {
+          "key": "knight",
+          "frame": 4
+        }
+      ],
+      "frameRate": 8,
+      "repeat": -1
+    },
+    {
+      "key": "knightRun",
+      "frames": [
+        {
+          "key": "knight",
+          "frame": 8
+        },
+        {
+          "key": "knight",
+          "frame": 9
+        },
+        {
+          "key": "knight",
+          "frame": 10
+        },
+        {
+          "key": "knight",
+          "frame": 11
+        },
+        {
+          "key": "knight",
+          "frame": 12
+        },
+        {
+          "key": "knight",
+          "frame": 13
+        },
+        {
+          "key": "knight",
+          "frame": 14
+        },
+        {
+          "key": "knight",
+          "frame": 15
+        }
+      ],
+      "frameRate": 12,
+      "repeat": -1
+    },
+    {
+      "key": "knightAttack",
+      "frames": [
+        {
+          "key": "knight",
+          "frame": 32
+        },
+        {
+          "key": "knight",
+          "frame": 33
+        },
+        {
+          "key": "knight",
+          "frame": 34
+        },
+        {
+          "key": "knight",
+          "frame": 35
+        },
+        {
+          "key": "knight",
+          "frame": 36
+        }
+      ],
+      "frameRate": 12,
+      "repeat": -1
+    },
+    {
+      "key": "knightBlock",
+      "frames": [
+        {
+          "key": "knight",
+          "frame": 56
+        },
+        {
+          "key": "knight",
+          "frame": 57
+        },
+        {
+          "key": "knight",
+          "frame": 57
+        },
+        {
+          "key": "knight",
+          "frame": 57
+        },
+        {
+          "key": "knight",
+          "frame": 57
+        }
+      ],
+      "frameRate": 4,
+      "repeat": 0
+    },
+    {
+      "key": "knightDead",
+      "frames": [
+        {
+          "key": "knight",
+          "frame": 48
+        },
+        {
+          "key": "knight",
+          "frame": 49
+        },
+        {
+          "key": "knight",
+          "frame": 50
+        },
+        {
+          "key": "knight",
+          "frame": 51
+        },
+        {
+          "key": "knight",
+          "frame": 52
+        },
+        {
+          "key": "knight",
+          "frame": 53
+        },
+        {
+          "key": "knight",
+          "frame": 54
+        }
+      ],
+      "frameRate": 8,
+      "repeat": -1
+    }
+  ]
+}
