@@ -35,20 +35,20 @@ export class GameScene extends Phaser.Scene {
 
     this.enemy = Enemy.new(this);
 
-    this.add.bitmapText(
-      16,
-      16,
-      "font",
-      "ATTACK : A\n" + "BLOCK  : D\n" + "JUMP   : SPACE",
-      16
-    );
+    this.add.bitmapText(16, 16, "font", "ATTACK : A\n" + "BLOCK  : D\n", 16);
   }
 
   update(): void {
     this.physics.add.overlap(this.player, this.enemy, () => {
       if (this.isProgress) {
         this.player.animation("attack");
-        this.enemy.dead();
+        this.time.addEvent({
+          delay: 300,
+          callback: () => {
+            this.enemy.dead();
+          },
+          loop: false,
+        });
       }
 
       this.isProgress = false;

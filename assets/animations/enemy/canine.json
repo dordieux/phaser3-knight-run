@@ -1,0 +1,54 @@
+{
+  "anims": [
+    {
+      "key": "canine_idle",
+      "frames": [
+        {
+          "key": "canine",
+          "frame": 5
+        },
+        {
+          "key": "canine",
+          "frame": 4
+        },
+        {
+          "key": "canine",
+          "frame": 3
+        },
+        {
+          "key": "canine",
+          "frame": 2
+        }
+      ],
+      "frameRate": 4,
+      "repeat": -1
+    },
+    {
+      "key": "canine_dead",
+      "frames": [
+        {
+          "key": "canine",
+          "frame": 29
+        },
+        {
+          "key": "canine",
+          "frame": 28
+        },
+        {
+          "key": "canine",
+          "frame": 27
+        },
+        {
+          "key": "canine",
+          "frame": 26
+        },
+        {
+          "key": "canine",
+          "frame": 25
+        }
+      ],
+      "frameRate": 8,
+      "repeat": 0
+    }
+  ]
+}

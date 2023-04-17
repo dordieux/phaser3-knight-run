@@ -22,6 +22,22 @@ export class MainMenuScene extends Phaser.Scene {
       "minotaurAnimations",
       "./assets/animations/enemy/minotaur.json"
     );
+    this.load.animation(
+      "golemAnimations",
+      "./assets/animations/enemy/golem.json"
+    );
+    this.load.animation(
+      "archerAnimations",
+      "./assets/animations/enemy/archer.json"
+    );
+    this.load.animation(
+      "slimeAnimations",
+      "./assets/animations/enemy/slime.json"
+    );
+    this.load.animation(
+      "canineAnimations",
+      "./assets/animations/enemy/canine.json"
+    );
   }
 
   init(): void {

@@ -1,0 +1,70 @@
+{
+  "anims": [
+    {
+      "key": "archer_idle",
+      "frames": [
+        {
+          "key": "archer",
+          "frame": 40
+        },
+        {
+          "key": "archer",
+          "frame": 41
+        },
+        {
+          "key": "archer",
+          "frame": 42
+        },
+        {
+          "key": "archer",
+          "frame": 43
+        }
+      ],
+      "frameRate": 6,
+      "repeat": -1
+    },
+    {
+      "key": "archer_dead",
+      "frames": [
+        {
+          "key": "archer",
+          "frame": 8
+        },
+        {
+          "key": "archer",
+          "frame": 9
+        },
+        {
+          "key": "archer",
+          "frame": 10
+        },
+        {
+          "key": "archer",
+          "frame": 11
+        },
+        {
+          "key": "archer",
+          "frame": 12
+        },
+        {
+          "key": "archer",
+          "frame": 13
+        },
+        {
+          "key": "archer",
+          "frame": 14
+        },
+        {
+          "key": "archer",
+          "frame": 15
+        },
+        {
+          "key": "archer",
+          "frame": 15
+        }
+      ],
+      "frameRate": 8,
+      "repeat": 0
+    }
+  ]
+}

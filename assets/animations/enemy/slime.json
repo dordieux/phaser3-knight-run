@@ -1,0 +1,62 @@
+{
+  "anims": [
+    {
+      "key": "slime_idle",
+      "frames": [
+        {
+          "key": "slime",
+          "frame": 0
+        },
+        {
+          "key": "slime",
+          "frame": 1
+        },
+        {
+          "key": "slime",
+          "frame": 2
+        },
+        {
+          "key": "slime",
+          "frame": 3
+        }
+      ],
+      "frameRate": 6,
+      "repeat": -1
+    },
+    {
+      "key": "slime_dead",
+      "frames": [
+        {
+          "key": "slime",
+          "frame": 20
+        },
+        {
+          "key": "slime",
+          "frame": 21
+        },
+        {
+          "key": "slime",
+          "frame": 22
+        },
+        {
+          "key": "slime",
+          "frame": 23
+        },
+        {
+          "key": "slime",
+          "frame": 24
+        },
+        {
+          "key": "slime",
+          "frame": 25
+        },
+        {
+          "key": "slime",
+          "frame": 26
+        }
+      ],
+      "frameRate": 8,
+      "repeat": 0
+    }
+  ]
+}

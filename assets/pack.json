@@ -43,6 +43,42 @@
           "frameWidth": 96,
           "frameHeight": 96
         }
+      },
+      {
+        "type": "spritesheet",
+        "key": "golem",
+        "url": "./assets/sprites/enemy/golem.png",
+        "frameConfig": {
+          "frameWidth": 64,
+          "frameHeight": 64
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "archer",
+        "url": "./assets/sprites/enemy/archer.png",
+        "frameConfig": {
+          "frameWidth": 64,
+          "frameHeight": 64
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "slime",
+        "url": "./assets/sprites/enemy/slime.png",
+        "frameConfig": {
+          "frameWidth": 64,
+          "frameHeight": 64
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "canine",
+        "url": "./assets/sprites/enemy/canine.png",
+        "frameConfig": {
+          "frameWidth": 48,
+          "frameHeight": 32
+        }
       }
     ]
   }

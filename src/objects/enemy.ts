@@ -1,8 +1,21 @@
 import { IImageConstructor } from "../interfaces/image.interface";
 
-const ENEMY_LIST = ["skeleton", "minotaur"];
+const ENEMY_LIST = [
+  "skeleton",
+  "minotaur",
+  "golem",
+  "archer",
+  "slime",
+  "canine",
+];
 
-type textureType = "skeleton" | "minotaur";
+type textureType =
+  | "skeleton"
+  | "minotaur"
+  | "golem"
+  | "archer"
+  | "slime"
+  | "canine";
 interface EnemyInterface extends IImageConstructor {
   texture: textureType;
 }
@@ -41,6 +54,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
       texture: ENEMY_LIST[
         Math.floor(Math.random() * ENEMY_LIST.length)
       ] as textureType,
+      // texture: "canine",
     });
   }
 }

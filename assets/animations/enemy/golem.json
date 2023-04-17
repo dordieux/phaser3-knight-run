@@ -1,0 +1,70 @@
+{
+  "anims": [
+    {
+      "key": "golem_idle",
+      "frames": [
+        {
+          "key": "golem",
+          "frame": 0
+        },
+        {
+          "key": "golem",
+          "frame": 1
+        },
+        {
+          "key": "golem",
+          "frame": 2
+        },
+        {
+          "key": "golem",
+          "frame": 3
+        }
+      ],
+      "frameRate": 6,
+      "repeat": -1
+    },
+    {
+      "key": "golem_dead",
+      "frames": [
+        {
+          "key": "golem",
+          "frame": 4
+        },
+        {
+          "key": "golem",
+          "frame": 5
+        },
+        {
+          "key": "golem",
+          "frame": 6
+        },
+        {
+          "key": "golem",
+          "frame": 7
+        },
+        {
+          "key": "golem",
+          "frame": 8
+        },
+        {
+          "key": "golem",
+          "frame": 9
+        },
+        {
+          "key": "golem",
+          "frame": 10
+        },
+        {
+          "key": "golem",
+          "frame": 11
+        },
+        {
+          "key": "golem",
+          "frame": 12
+        }
+      ],
+      "frameRate": 8,
+      "repeat": 0
+    }
+  ]
+}
