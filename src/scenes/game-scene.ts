@@ -33,12 +33,7 @@ export class GameScene extends Phaser.Scene {
       texture: "player",
     });
 
-    this.enemy = new Enemy({
-      scene: this,
-      x: 0,
-      y: 275,
-      texture: "skeleton",
-    });
+    this.enemy = Enemy.new(this);
 
     this.add.bitmapText(
       16,
@@ -83,25 +78,20 @@ export class GameScene extends Phaser.Scene {
 
     if (!this.isEnemyAlive) {
       this.time.addEvent({
-        delay: 1000,
+        delay: 1500,
         callback: () => {
           if (this.player.x > 150) {
             this.background.tilePositionX += 4;
             this.player.animation("run");
-            this.player.x -= 3;
+            this.player.x -= 5;
           }
         },
         loop: false,
       });
 
-      if (this.player.x === 150) {
+      if (this.player.x <= 150) {
         this.isEnemyAlive = true;
-        this.enemy = new Enemy({
-          scene: this,
-          x: 0,
-          y: 275,
-          texture: "skeleton",
-        });
+        this.enemy = Enemy.new(this);
       }
     }
   }

@@ -1,0 +1,70 @@
+{
+  "anims": [
+    {
+      "key": "minotaur_idle",
+      "frames": [
+        {
+          "key": "minotaur",
+          "frame": 20
+        },
+        {
+          "key": "minotaur",
+          "frame": 21
+        },
+        {
+          "key": "minotaur",
+          "frame": 22
+        },
+        {
+          "key": "minotaur",
+          "frame": 23
+        },
+        {
+          "key": "minotaur",
+          "frame": 24
+        }
+      ],
+      "frameRate": 6,
+      "repeat": -1
+    },
+    {
+      "key": "minotaur_dead",
+      "frames": [
+        {
+          "key": "minotaur",
+          "frame": 90
+        },
+        {
+          "key": "minotaur",
+          "frame": 91
+        },
+        {
+          "key": "minotaur",
+          "frame": 92
+        },
+        {
+          "key": "minotaur",
+          "frame": 93
+        },
+        {
+          "key": "minotaur",
+          "frame": 94
+        },
+        {
+          "key": "minotaur",
+          "frame": 95
+        },
+        {
+          "key": "minotaur",
+          "frame": 96
+        },
+        {
+          "key": "minotaur",
+          "frame": 97
+        }
+      ],
+      "frameRate": 4,
+      "repeat": 0
+    }
+  ]
+}

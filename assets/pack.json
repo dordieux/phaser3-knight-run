@@ -29,10 +29,19 @@
       {
         "type": "spritesheet",
         "key": "skeleton",
-        "url": "./assets/sprites/skeleton.png",
+        "url": "./assets/sprites/enemy/skeleton.png",
         "frameConfig": {
           "frameWidth": 64,
           "frameHeight": 64
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "minotaur",
+        "url": "./assets/sprites/enemy/minotaur.png",
+        "frameConfig": {
+          "frameWidth": 96,
+          "frameHeight": 96
         }
       }
     ]

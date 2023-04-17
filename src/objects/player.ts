@@ -17,6 +17,7 @@ export class Player extends Phaser.GameObjects.Sprite {
 
   private initImage(): void {
     this.setScale(4);
+    this.setDepth(1);
     this.animation("idle");
   }
 

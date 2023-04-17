@@ -16,7 +16,11 @@ export class MainMenuScene extends Phaser.Scene {
     this.load.animation("knightAnimations", "./assets/animations/knight.json");
     this.load.animation(
       "skeletonAnimations",
-      "./assets/animations/skeleton.json"
+      "./assets/animations/enemy/skeleton.json"
+    );
+    this.load.animation(
+      "minotaurAnimations",
+      "./assets/animations/enemy/minotaur.json"
     );
   }
 
