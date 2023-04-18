@@ -1,12 +1,9 @@
-import { IImageConstructor } from "../interfaces/image.interface";
+import { CharacterConstructor } from "../interfaces/character.interface";
 
 export class Player extends Phaser.GameObjects.Sprite {
   declare body: Phaser.Physics.Arcade.Body;
-  private jumpKey = this.scene.input.keyboard!.addKey(
-    Phaser.Input.Keyboard.KeyCodes.SPACE
-  );
 
-  constructor(aParams: IImageConstructor) {
+  constructor(aParams: CharacterConstructor) {
     super(aParams.scene, aParams.x, aParams.y, aParams.texture);
 
     this.initImage();
@@ -23,11 +20,5 @@ export class Player extends Phaser.GameObjects.Sprite {
 
   animation(status: "idle" | "run" | "jump" | "attack") {
     this.anims.play("knight_" + status, true);
-  }
-
-  update(): void {
-    if (this.jumpKey.isDown) {
-      this.animation("jump");
-    }
   }
 }

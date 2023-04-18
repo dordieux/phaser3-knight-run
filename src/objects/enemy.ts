@@ -1,60 +1,57 @@
-import { IImageConstructor } from "../interfaces/image.interface";
+import { CharacterConstructor } from "../interfaces/character.interface";
 
-const ENEMY_LIST = [
-  "skeleton",
-  "minotaur",
-  "golem",
-  "archer",
-  "slime",
-  "canine",
-];
+enum Texture {
+  Skeleton = "skeleton",
+  Minotaur = "minotaur",
+  Golem = "golem",
+  Archer = "archer",
+  Slime = "slime",
+  Canine = "canine",
+}
 
-type textureType =
-  | "skeleton"
-  | "minotaur"
-  | "golem"
-  | "archer"
-  | "slime"
-  | "canine";
-interface EnemyInterface extends IImageConstructor {
-  texture: textureType;
+type Action = "attack" | "defence";
+
+interface EnemyInterface extends CharacterConstructor {
+  texture: Texture;
+  action: Action;
 }
 
 export class Enemy extends Phaser.GameObjects.Sprite {
   declare body: Phaser.Physics.Arcade.Body;
 
-  constructor(aParams: EnemyInterface) {
-    super(aParams.scene, aParams.x, aParams.y, aParams.texture);
+  constructor({ scene, x, y, texture, action }: EnemyInterface) {
+    super(scene, x, y, texture);
 
-    this.initImage();
+    this.setScale(4);
+    this.x = scene.scale.baseSize.width;
+    this.flipX = true;
+    this.anims.play(`${texture}_idle`, true);
+
     this.scene.physics.world.enable(this);
     this.scene.add.existing(this);
     this.body.setSize(32, 32);
   }
 
-  private initImage(): void {
-    this.setScale(4);
-    this.x = this.scene.scale.baseSize.width;
-    this.flipX = true;
-    this.anims.play(this.texture.key + "_idle", true);
+  private static getRandomTextureAndAction(): [Texture, Action] {
+    const textureValues = Object.values(Texture);
+    const randomTexture =
+      textureValues[Math.floor(Math.random() * textureValues.length)];
+
+    const randomAction = ["attack", "defence"][
+      Math.floor(Math.random() * 2)
+    ] as Action;
+    return [randomTexture, randomAction];
+  }
+
+  static new(scene: Phaser.Scene): Enemy {
+    const [texture, action] = this.getRandomTextureAndAction();
+    return new this({ scene, x: 0, y: 275, texture, action });
   }
 
   dead() {
-    this.anims.play(this.texture.key + "_dead", true);
+    this.anims.play(`${this.texture.key}_dead`, true);
     this.on("animationcomplete", () => {
       this.destroy();
-    });
-  }
-
-  static new(scene: Phaser.Scene) {
-    return new this({
-      scene: scene,
-      x: 0,
-      y: 275,
-      texture: ENEMY_LIST[
-        Math.floor(Math.random() * ENEMY_LIST.length)
-      ] as textureType,
-      // texture: "canine",
     });
   }
 }
