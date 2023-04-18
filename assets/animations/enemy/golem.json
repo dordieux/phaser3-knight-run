@@ -24,7 +24,7 @@
       "repeat": -1
     },
     {
-      "key": "golem_dead",
+      "key": "golem_attack",
       "frames": [
         {
           "key": "golem",
@@ -48,22 +48,45 @@
         },
         {
           "key": "golem",
-          "frame": 9
+          "frame": 8
         },
         {
           "key": "golem",
-          "frame": 10
-        },
-        {
-          "key": "golem",
-          "frame": 11
-        },
-        {
-          "key": "golem",
-          "frame": 12
+          "frame": 8
         }
       ],
       "frameRate": 8,
+      "repeat": 0
+    },
+    {
+      "key": "golem_dead",
+      "frames": [
+        {
+          "key": "golem",
+          "frame": 12
+        },
+        {
+          "key": "golem",
+          "frame": 13
+        },
+        {
+          "key": "golem",
+          "frame": 14
+        },
+        {
+          "key": "golem",
+          "frame": 15
+        },
+        {
+          "key": "golem",
+          "frame": 16
+        },
+        {
+          "key": "golem",
+          "frame": 16
+        }
+      ],
+      "frameRate": 6,
       "repeat": 0
     }
   ]

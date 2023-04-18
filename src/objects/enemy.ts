@@ -70,4 +70,11 @@ export class Enemy extends Phaser.GameObjects.Sprite {
       this.destroy();
     });
   }
+
+  attack() {
+    this.anims.play(`${this.texture.key}_attack`, true);
+    this.on("animationcomplete", () => {
+      this.destroy();
+    });
+  }
 }

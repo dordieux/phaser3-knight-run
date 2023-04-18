@@ -24,6 +24,49 @@
       "repeat": -1
     },
     {
+      "key": "canine_attack",
+      "frames": [
+        {
+          "key": "canine",
+          "frame": 1
+        },
+        {
+          "key": "canine",
+          "frame": 0
+        },
+        {
+          "key": "canine",
+          "frame": 11
+        },
+        {
+          "key": "canine",
+          "frame": 10
+        },
+        {
+          "key": "canine",
+          "frame": 9
+        },
+        {
+          "key": "canine",
+          "frame": 8
+        },
+        {
+          "key": "canine",
+          "frame": 7
+        },
+        {
+          "key": "canine",
+          "frame": 7
+        },
+        {
+          "key": "canine",
+          "frame": 7
+        }
+      ],
+      "frameRate": 10,
+      "repeat": 0
+    },
+    {
       "key": "canine_dead",
       "frames": [
         {

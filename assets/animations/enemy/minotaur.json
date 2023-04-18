@@ -28,6 +28,57 @@
       "repeat": -1
     },
     {
+      "key": "minotaur_attack",
+      "frames": [
+        {
+          "key": "minotaur",
+          "frame": 30
+        },
+        {
+          "key": "minotaur",
+          "frame": 31
+        },
+        {
+          "key": "minotaur",
+          "frame": 32
+        },
+        {
+          "key": "minotaur",
+          "frame": 33
+        },
+        {
+          "key": "minotaur",
+          "frame": 34
+        },
+        {
+          "key": "minotaur",
+          "frame": 35
+        },
+        {
+          "key": "minotaur",
+          "frame": 36
+        },
+        {
+          "key": "minotaur",
+          "frame": 37
+        },
+        {
+          "key": "minotaur",
+          "frame": 38
+        },
+        {
+          "key": "minotaur",
+          "frame": 38
+        },
+        {
+          "key": "minotaur",
+          "frame": 38
+        }
+      ],
+      "frameRate": 8,
+      "repeat": 0
+    },
+    {
       "key": "minotaur_dead",
       "frames": [
         {

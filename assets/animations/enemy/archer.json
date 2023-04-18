@@ -24,6 +24,53 @@
       "repeat": -1
     },
     {
+      "key": "archer_attack",
+      "frames": [
+        {
+          "key": "archer",
+          "frame": 24
+        },
+        {
+          "key": "archer",
+          "frame": 25
+        },
+        {
+          "key": "archer",
+          "frame": 26
+        },
+        {
+          "key": "archer",
+          "frame": 27
+        },
+        {
+          "key": "archer",
+          "frame": 28
+        },
+        {
+          "key": "archer",
+          "frame": 29
+        },
+        {
+          "key": "archer",
+          "frame": 30
+        },
+        {
+          "key": "archer",
+          "frame": 30
+        },
+        {
+          "key": "archer",
+          "frame": 30
+        },
+        {
+          "key": "archer",
+          "frame": 30
+        }
+      ],
+      "frameRate": 10,
+      "repeat": 0
+    },
+    {
       "key": "archer_dead",
       "frames": [
         {

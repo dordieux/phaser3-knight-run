@@ -24,6 +24,69 @@
       "repeat": -1
     },
     {
+      "key": "skeleton_attack",
+      "frames": [
+        {
+          "key": "skeleton",
+          "frame": 0
+        },
+        {
+          "key": "skeleton",
+          "frame": 1
+        },
+        {
+          "key": "skeleton",
+          "frame": 2
+        },
+        {
+          "key": "skeleton",
+          "frame": 3
+        },
+        {
+          "key": "skeleton",
+          "frame": 4
+        },
+        {
+          "key": "skeleton",
+          "frame": 5
+        },
+        {
+          "key": "skeleton",
+          "frame": 6
+        },
+        {
+          "key": "skeleton",
+          "frame": 7
+        },
+        {
+          "key": "skeleton",
+          "frame": 8
+        },
+        {
+          "key": "skeleton",
+          "frame": 9
+        },
+        {
+          "key": "skeleton",
+          "frame": 10
+        },
+        {
+          "key": "skeleton",
+          "frame": 10
+        },
+        {
+          "key": "skeleton",
+          "frame": 10
+        },
+        {
+          "key": "skeleton",
+          "frame": 10
+        }
+      ],
+      "frameRate": 12,
+      "repeat": 0
+    },
+    {
       "key": "skeleton_run",
       "frames": [
         {

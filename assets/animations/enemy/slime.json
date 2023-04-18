@@ -24,6 +24,37 @@
       "repeat": -1
     },
     {
+      "key": "slime_attack",
+      "frames": [
+        {
+          "key": "slime",
+          "frame": 4
+        },
+        {
+          "key": "slime",
+          "frame": 5
+        },
+        {
+          "key": "slime",
+          "frame": 6
+        },
+        {
+          "key": "slime",
+          "frame": 7
+        },
+        {
+          "key": "slime",
+          "frame": 7
+        },
+        {
+          "key": "slime",
+          "frame": 7
+        }
+      ],
+      "frameRate": 6,
+      "repeat": 0
+    },
+    {
       "key": "slime_dead",
       "frames": [
         {
