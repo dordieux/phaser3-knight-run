@@ -10,12 +10,17 @@
       {
         "type": "image",
         "key": "background_forest",
-        "url": "./assets/images/forest.png"
+        "url": "./assets/images/background/forest.png"
       },
       {
         "type": "image",
         "key": "background_mist",
-        "url": "./assets/images/mist.png"
+        "url": "./assets/images/background/mist.png"
+      },
+      {
+        "type": "image",
+        "key": "warning",
+        "url": "./assets/images/warning.png"
       },
       {
         "type": "spritesheet",

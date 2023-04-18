@@ -18,7 +18,7 @@ export class Player extends Phaser.GameObjects.Sprite {
     this.animation("idle");
   }
 
-  animation(status: "idle" | "run" | "jump" | "attack") {
+  animation(status: "idle" | "run" | "jump" | "attack" | "block") {
     this.anims.play("knight_" + status, true);
   }
 }

@@ -73,6 +73,8 @@ export class GameScene extends Phaser.Scene {
       if (this.isProgress) {
         this.player.animation("run");
         this.player.x += 3;
+      } else {
+        this.enemy.update();
       }
     }
 

@@ -18,9 +18,13 @@ interface EnemyInterface extends CharacterConstructor {
 
 export class Enemy extends Phaser.GameObjects.Sprite {
   declare body: Phaser.Physics.Arcade.Body;
+  declare warning: Phaser.GameObjects.Image;
+
+  action: Action;
 
   constructor({ scene, x, y, texture, action }: EnemyInterface) {
     super(scene, x, y, texture);
+    this.action = action;
 
     this.setScale(4);
     this.x = scene.scale.baseSize.width;
@@ -46,6 +50,18 @@ export class Enemy extends Phaser.GameObjects.Sprite {
   static new(scene: Phaser.Scene): Enemy {
     const [texture, action] = this.getRandomTextureAndAction();
     return new this({ scene, x: 0, y: 275, texture, action });
+  }
+
+  update() {
+    if (this.action === "attack") {
+      const image = this.scene.add
+        .image(this.x - 100, this.y - 70, "warning")
+        .setScale(3);
+
+      this.scene.time.delayedCall(1, () => {
+        image.destroy();
+      });
+    }
   }
 
   dead() {
