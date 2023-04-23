@@ -9,81 +9,8 @@
       },
       {
         "type": "image",
-        "key": "background_forest",
-        "url": "./assets/images/background/forest.png"
-      },
-      {
-        "type": "image",
-        "key": "background_mist",
-        "url": "./assets/images/background/mist.png"
-      },
-      {
-        "type": "image",
         "key": "warning",
         "url": "./assets/images/warning.png"
-      },
-      {
-        "type": "spritesheet",
-        "key": "knight",
-        "url": "./assets/sprites/knight.png",
-        "frameConfig": {
-          "frameWidth": 64,
-          "frameHeight": 64
-        }
-      },
-      {
-        "type": "spritesheet",
-        "key": "skeleton",
-        "url": "./assets/sprites/enemy/skeleton.png",
-        "frameConfig": {
-          "frameWidth": 64,
-          "frameHeight": 64
-        }
-      },
-      {
-        "type": "spritesheet",
-        "key": "minotaur",
-        "url": "./assets/sprites/enemy/minotaur.png",
-        "frameConfig": {
-          "frameWidth": 96,
-          "frameHeight": 96
-        }
-      },
-      {
-        "type": "spritesheet",
-        "key": "golem",
-        "url": "./assets/sprites/enemy/golem.png",
-        "frameConfig": {
-          "frameWidth": 64,
-          "frameHeight": 64
-        }
-      },
-      {
-        "type": "spritesheet",
-        "key": "archer",
-        "url": "./assets/sprites/enemy/archer.png",
-        "frameConfig": {
-          "frameWidth": 64,
-          "frameHeight": 64
-        }
-      },
-      {
-        "type": "spritesheet",
-        "key": "slime",
-        "url": "./assets/sprites/enemy/slime.png",
-        "frameConfig": {
-          "frameWidth": 64,
-          "frameHeight": 64
-        }
-      },
-      {
-        "type": "spritesheet",
-        "key": "canine",
-        "url": "./assets/sprites/enemy/canine.png",
-        "frameConfig": {
-          "frameWidth": 48,
-          "frameHeight": 32
-        }
       }
     ]
   }

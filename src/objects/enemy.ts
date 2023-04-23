@@ -18,7 +18,6 @@ interface EnemyInterface extends CharacterConstructor {
 
 export class Enemy extends Phaser.GameObjects.Sprite {
   declare body: Phaser.Physics.Arcade.Body;
-  declare warning: Phaser.GameObjects.Image;
 
   action: Action = "idle";
 

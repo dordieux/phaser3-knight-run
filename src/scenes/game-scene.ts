@@ -1,4 +1,4 @@
-import { Enemy, Player } from "../objects";
+import { Background, Enemy, Player } from "../objects";
 
 export class GameScene extends Phaser.Scene {
   isEncounter = false;
@@ -10,7 +10,7 @@ export class GameScene extends Phaser.Scene {
   declare action: "attack" | "block";
 
   constructor(
-    private background: Phaser.GameObjects.TileSprite,
+    private background: Background,
     private player: Player,
     private enemy: Enemy,
     private enemyWarning: Phaser.GameObjects.Image,
@@ -22,15 +22,14 @@ export class GameScene extends Phaser.Scene {
   }
 
   create(): void {
-    this.background = this.add
-      .tileSprite(
-        0,
-        0,
-        this.game.config.width as number,
-        this.game.config.height as number,
-        "background_forest"
-      )
-      .setOrigin(0, 0);
+    this.background = new Background(
+      this,
+      "background_forest",
+      this.game.config.width as number,
+      this.game.config.height as number,
+      13
+    );
+
     this.add.bitmapText(16, 16, "font", "ATTACK : A\n" + "BLOCK  : D\n", 16);
 
     this.scoreText = this.add
@@ -62,7 +61,7 @@ export class GameScene extends Phaser.Scene {
 
     if (!this.isEncounter) {
       if (!this.isEnemyAlive || this.enemy.x > 450) {
-        this.background.tilePositionX += 4;
+        this.background.update();
         this.enemy.x -= 2;
         this.player.animation("run");
       } else {

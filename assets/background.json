@@ -1,0 +1,76 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "image",
+        "key": "background_forest",
+        "url": "./assets/images/background/forest/full.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_0",
+        "url": "./assets/images/background/forest/layer_0.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_1",
+        "url": "./assets/images/background/forest/layer_1.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_2",
+        "url": "./assets/images/background/forest/layer_2.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_3",
+        "url": "./assets/images/background/forest/layer_3.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_4",
+        "url": "./assets/images/background/forest/layer_4.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_5",
+        "url": "./assets/images/background/forest/layer_5.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_6",
+        "url": "./assets/images/background/forest/layer_6.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_7",
+        "url": "./assets/images/background/forest/layer_7.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_8",
+        "url": "./assets/images/background/forest/layer_8.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_9",
+        "url": "./assets/images/background/forest/layer_9.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_10",
+        "url": "./assets/images/background/forest/layer_10.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_11",
+        "url": "./assets/images/background/forest/layer_11.png"
+      },
+      {
+        "type": "image",
+        "key": "background_forest_12",
+        "url": "./assets/images/background/forest/layer_12.png"
+      }
+    ]
+  }
+}

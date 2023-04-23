@@ -1,3 +1,5 @@
+import { Background } from "../objects";
+
 export class MainMenuScene extends Phaser.Scene {
   constructor(
     private startKey: Phaser.Input.Keyboard.Key,
@@ -10,9 +12,9 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   preload(): void {
-    this.cameras.main.setBackgroundColor(0x98d687);
-
-    this.load.pack("preload", "./assets/pack.json", "preload");
+    this.load.pack("preloadPack", "./assets/pack.json", "preload");
+    this.load.pack("preloadC", "./assets/character.json", "preload");
+    this.load.pack("preloadB", "./assets/background.json", "preload");
     this.load.animation("knightAnimations", "./assets/animations/knight.json");
     this.load.animation(
       "skeletonAnimations",
@@ -48,6 +50,24 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   create(): void {
+    new Background(
+      this,
+      "background_forest",
+      this.game.config.width as number,
+      this.game.config.height as number,
+      13
+    );
+
+    this.add
+      .tileSprite(
+        0,
+        0,
+        this.game.config.width as number,
+        this.game.config.height as number,
+        "background_forest"
+      )
+      .setOrigin(0, 0);
+
     this.titleBitmapText = this.add.bitmapText(0, 150, "font", "TITLE", 30);
 
     this.titleBitmapText.x = this.getCenterXPositionOfBitmapText(

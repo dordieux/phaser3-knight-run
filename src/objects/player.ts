@@ -3,8 +3,8 @@ import { CharacterConstructor } from "../interfaces/character.interface";
 export class Player extends Phaser.GameObjects.Sprite {
   declare body: Phaser.Physics.Arcade.Body;
 
-  constructor(aParams: CharacterConstructor) {
-    super(aParams.scene, aParams.x, aParams.y, aParams.texture);
+  constructor(params: CharacterConstructor) {
+    super(params.scene, params.x, params.y, params.texture);
 
     this.initImage();
     this.scene.physics.world.enable(this);
