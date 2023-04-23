@@ -41,7 +41,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     const randomTexture =
       textureValues[Math.floor(Math.random() * textureValues.length)];
 
-    const randomAction = ["idle", "attack"][
+    const randomAction = ["idle", "idle"][
       Math.floor(Math.random() * 2)
     ] as Action;
     return [randomTexture, randomAction];
@@ -63,6 +63,14 @@ export class Enemy extends Phaser.GameObjects.Sprite {
 
     this.on("animationcomplete", () => {
       this.anims.play(`${this.texture.key}_idle`, true);
+    });
+  }
+
+  dead() {
+    this.anims.play(`${this.texture.key}_dead`, true);
+
+    this.on("animationcomplete", () => {
+      this.destroy();
     });
   }
 }
