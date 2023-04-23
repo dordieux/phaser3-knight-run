@@ -5,7 +5,7 @@ export class GameScene extends Phaser.Scene {
   isProgress = false;
   isEnemyAlive = true;
 
-  declare action: string;
+  declare action: "attack" | "block";
 
   constructor(
     private background: Phaser.GameObjects.TileSprite,
@@ -43,8 +43,7 @@ export class GameScene extends Phaser.Scene {
   update(): void {
     this.physics.add.overlap(this.player, this.enemy, () => {
       if (this.isProgress) {
-        if (this.action === "attack") this.attack();
-        if (this.action === "defence") this.defence();
+        this.battle();
       }
 
       this.isProgress = false;
@@ -100,28 +99,19 @@ export class GameScene extends Phaser.Scene {
       this.isProgress = true;
     }
     if (this.input.keyboard?.addKey(Phaser.Input.Keyboard.KeyCodes.D).isDown) {
-      this.action = "defence";
+      this.action = "block";
       this.isProgress = true;
     }
   }
 
-  private attack() {
-    this.player.animation("attack");
-    this.time.addEvent({
-      delay: 300,
-      callback: () => {
-        this.enemy.dead();
-      },
-      loop: false,
-    });
-  }
+  private battle() {
+    this.player.animation(this.action);
 
-  private defence() {
-    this.player.animation("block");
     this.time.addEvent({
       delay: 300,
       callback: () => {
-        this.enemy.attack();
+        if (this.action === "attack") this.enemy.dead();
+        if (this.action === "block") this.enemy.attack();
       },
       loop: false,
     });
