@@ -4,14 +4,15 @@ export class GameScene extends Phaser.Scene {
   isEncounter = false;
   isProgress = false;
   isEnemyAlive = true;
-  isPlayerReady = false;
+  isPlayerReady = true;
 
   declare action: "attack" | "block";
 
   constructor(
     private background: Phaser.GameObjects.TileSprite,
     private player: Player,
-    private enemy: Enemy
+    private enemy: Enemy,
+    private enemyWarning: Phaser.GameObjects.Image
   ) {
     super({
       key: "GameScene",
@@ -47,7 +48,7 @@ export class GameScene extends Phaser.Scene {
       this.isProgress = false;
     });
 
-    if (!this.isEnemyAlive || !this.isEncounter) {
+    if (!this.isEncounter) {
       if (!this.isEnemyAlive || this.enemy.x > 450) {
         this.background.tilePositionX += 4;
         this.enemy.x -= 2;
@@ -55,26 +56,25 @@ export class GameScene extends Phaser.Scene {
       } else {
         this.isEncounter = true;
         this.player.animation("idle");
-        this.enemy.update();
       }
     }
 
     if (this.isEncounter) {
-      this.handleInput();
+      if (this.enemyWarning) this.enemyWarning.destroy();
+
+      if (this.isPlayerReady && this.enemy.action === "attack") {
+        this.enemyWarning = this.add
+          .image(this.enemy.x - 100, this.enemy.y - 70, "warning")
+          .setScale(3);
+      }
+
+      if (this.isPlayerReady) {
+        this.handleInput();
+      }
 
       if (this.isProgress) {
         this.player.animation("run");
         this.player.x += 3;
-      }
-    }
-
-    if (this.isPlayerReady) {
-      if (this.player.x > 150) {
-        this.player.animation("run");
-        this.player.x -= 5;
-      } else {
-        this.player.animation("idle");
-        this.isPlayerReady = false;
       }
     }
   }
@@ -83,10 +83,12 @@ export class GameScene extends Phaser.Scene {
     if (this.input.keyboard?.addKey(Phaser.Input.Keyboard.KeyCodes.A).isDown) {
       this.action = "attack";
       this.isProgress = true;
+      this.isPlayerReady = false;
     }
     if (this.input.keyboard?.addKey(Phaser.Input.Keyboard.KeyCodes.D).isDown) {
       this.action = "block";
       this.isProgress = true;
+      this.isPlayerReady = false;
     }
   }
 
@@ -104,8 +106,6 @@ export class GameScene extends Phaser.Scene {
     this.player.animation(this.action);
 
     this.player.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
-      this.isPlayerReady = true;
-      if (isWin) console.log("win");
       if (isEnemyDead) {
         this.isEnemyAlive = false;
         this.isEncounter = false;
@@ -119,10 +119,26 @@ export class GameScene extends Phaser.Scene {
           loop: false,
         });
       }
+
+      const event = this.time.addEvent({
+        delay: 15,
+        callback: () => {
+          if (this.player.x > 150) {
+            this.player.animation("run");
+            this.player.x -= 5;
+          } else {
+            this.time.removeEvent(event);
+            this.isPlayerReady = true;
+            this.player.animation("idle");
+            this.enemy.update();
+          }
+        },
+        loop: true,
+      });
     });
   }
 
-  private battleResult() {
+  private battleResult(): [isDead: boolean, isWin: boolean] {
     if (this.action === "attack" && this.enemy.action === "idle")
       return [true, true];
     if (this.action === "block" && this.enemy.action === "attack")

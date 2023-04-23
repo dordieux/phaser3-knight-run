@@ -36,26 +36,13 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     this.body.setSize(32, 32);
   }
 
-  private static getRandomTextureAndAction(): [Texture, Action] {
-    const textureValues = Object.values(Texture);
-    const randomTexture =
-      textureValues[Math.floor(Math.random() * textureValues.length)];
-
-    const randomAction = ["idle", "idle"][
-      Math.floor(Math.random() * 2)
-    ] as Action;
-    return [randomTexture, randomAction];
-  }
-
   static new(scene: Phaser.Scene): Enemy {
-    const [texture, action] = this.getRandomTextureAndAction();
+    const [texture, action] = getRandomTextureAndAction();
     return new this({ scene, x: 0, y: 275, texture, action });
   }
 
   update() {
-    if (this.action === "attack") {
-      this.scene.add.image(this.x - 100, this.y - 70, "warning").setScale(3);
-    }
+    this.action = getRandomeAction();
   }
 
   battle() {
@@ -73,4 +60,16 @@ export class Enemy extends Phaser.GameObjects.Sprite {
       this.destroy();
     });
   }
+}
+
+function getRandomTextureAndAction(): [Texture, Action] {
+  const textureValues = Object.values(Texture);
+  const randomTexture =
+    textureValues[Math.floor(Math.random() * textureValues.length)];
+
+  return [randomTexture, getRandomeAction()];
+}
+
+function getRandomeAction(): Action {
+  return ["attack", "idle"][Math.floor(Math.random() * 2)] as Action;
 }
