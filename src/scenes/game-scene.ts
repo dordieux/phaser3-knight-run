@@ -4,6 +4,8 @@ export class GameScene extends Phaser.Scene {
   isEncounter = false;
   isProgress = false;
   isEnemyAlive = true;
+  isEnemyAction = false;
+  isPlayerReady = false;
 
   declare action: "attack" | "block";
 
@@ -27,6 +29,7 @@ export class GameScene extends Phaser.Scene {
         "background_forest"
       )
       .setOrigin(0, 0);
+    this.add.bitmapText(16, 16, "font", "ATTACK : A\n" + "BLOCK  : D\n", 16);
 
     this.player = new Player({
       scene: this,
@@ -36,22 +39,16 @@ export class GameScene extends Phaser.Scene {
     });
 
     this.enemy = Enemy.new(this);
-
-    this.add.bitmapText(16, 16, "font", "ATTACK : A\n" + "BLOCK  : D\n", 16);
   }
 
   update(): void {
     this.physics.add.overlap(this.player, this.enemy, () => {
-      if (this.isProgress) {
-        this.battle();
-      }
+      if (this.isProgress) this.battle();
 
       this.isProgress = false;
-      this.isEnemyAlive = false;
-      this.isEncounter = false;
     });
 
-    if (this.isEnemyAlive && !this.isEncounter) {
+    if (!this.isEncounter) {
       if (this.enemy.x > 450) {
         this.background.tilePositionX += 4;
         this.enemy.x -= 2;
@@ -59,6 +56,7 @@ export class GameScene extends Phaser.Scene {
       } else {
         this.isEncounter = true;
         this.player.animation("idle");
+        this.enemy.update();
       }
     }
 
@@ -68,27 +66,16 @@ export class GameScene extends Phaser.Scene {
       if (this.isProgress) {
         this.player.animation("run");
         this.player.x += 3;
-      } else {
-        this.enemy.update();
       }
     }
 
-    if (!this.isEnemyAlive) {
-      this.time.addEvent({
-        delay: 1500,
-        callback: () => {
-          if (this.player.x > 150) {
-            this.background.tilePositionX += 4;
-            this.player.animation("run");
-            this.player.x -= 5;
-          }
-        },
-        loop: false,
-      });
-
-      if (this.player.x <= 150) {
-        this.isEnemyAlive = true;
-        this.enemy = Enemy.new(this);
+    if (this.isPlayerReady) {
+      if (this.player.x > 150) {
+        this.player.animation("run");
+        this.player.x -= 5;
+      } else {
+        this.player.animation("idle");
+        this.isPlayerReady = false;
       }
     }
   }
@@ -106,12 +93,14 @@ export class GameScene extends Phaser.Scene {
 
   private battle() {
     this.player.animation(this.action);
+    this.player.on("animationcomplete", () => {
+      this.isPlayerReady = true;
+    });
 
     this.time.addEvent({
       delay: 300,
       callback: () => {
-        if (this.action === "attack") this.enemy.dead();
-        if (this.action === "block") this.enemy.attack();
+        this.enemy.battle();
       },
       loop: false,
     });

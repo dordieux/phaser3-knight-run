@@ -9,7 +9,7 @@ enum Texture {
   Canine = "canine",
 }
 
-type Action = "attack" | "defence";
+type Action = "attack" | "idle";
 
 interface EnemyInterface extends CharacterConstructor {
   texture: Texture;
@@ -20,7 +20,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
   declare body: Phaser.Physics.Arcade.Body;
   declare warning: Phaser.GameObjects.Image;
 
-  action: Action;
+  action: Action = "idle";
 
   constructor({ scene, x, y, texture, action }: EnemyInterface) {
     super(scene, x, y, texture);
@@ -41,7 +41,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     const randomTexture =
       textureValues[Math.floor(Math.random() * textureValues.length)];
 
-    const randomAction = ["attack", "defence"][
+    const randomAction = ["idle", "attack"][
       Math.floor(Math.random() * 2)
     ] as Action;
     return [randomTexture, randomAction];
@@ -54,27 +54,15 @@ export class Enemy extends Phaser.GameObjects.Sprite {
 
   update() {
     if (this.action === "attack") {
-      const image = this.scene.add
-        .image(this.x - 100, this.y - 70, "warning")
-        .setScale(3);
-
-      this.scene.time.delayedCall(1, () => {
-        image.destroy();
-      });
+      this.scene.add.image(this.x - 100, this.y - 70, "warning").setScale(3);
     }
   }
 
-  dead() {
-    this.anims.play(`${this.texture.key}_dead`, true);
-    this.on("animationcomplete", () => {
-      this.destroy();
-    });
-  }
+  battle() {
+    this.anims.play(`${this.texture.key}_${this.action}`, true);
 
-  attack() {
-    this.anims.play(`${this.texture.key}_attack`, true);
     this.on("animationcomplete", () => {
-      this.destroy();
+      this.anims.play(`${this.texture.key}_idle`, true);
     });
   }
 }
