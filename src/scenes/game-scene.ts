@@ -5,6 +5,7 @@ export class GameScene extends Phaser.Scene {
   isProgress = false;
   isEnemyAlive = true;
   isPlayerReady = true;
+  score = 0;
 
   declare action: "attack" | "block";
 
@@ -12,7 +13,8 @@ export class GameScene extends Phaser.Scene {
     private background: Phaser.GameObjects.TileSprite,
     private player: Player,
     private enemy: Enemy,
-    private enemyWarning: Phaser.GameObjects.Image
+    private enemyWarning: Phaser.GameObjects.Image,
+    private scoreText: Phaser.GameObjects.BitmapText
   ) {
     super({
       key: "GameScene",
@@ -30,6 +32,16 @@ export class GameScene extends Phaser.Scene {
       )
       .setOrigin(0, 0);
     this.add.bitmapText(16, 16, "font", "ATTACK : A\n" + "BLOCK  : D\n", 16);
+
+    this.scoreText = this.add
+      .bitmapText(
+        this.sys.canvas.width / 2,
+        32,
+        "font",
+        this.score.toString(),
+        32
+      )
+      .setOrigin(0.5);
 
     this.player = new Player({
       scene: this,
@@ -106,6 +118,11 @@ export class GameScene extends Phaser.Scene {
     this.player.animation(this.action);
 
     this.player.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+      if (isWin) {
+        this.score += 1;
+        this.scoreText.text = this.score.toString();
+      }
+
       if (isEnemyDead) {
         this.isEnemyAlive = false;
         this.isEncounter = false;
