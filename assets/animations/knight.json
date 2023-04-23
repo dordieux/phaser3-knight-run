@@ -162,9 +162,17 @@
         {
           "key": "knight",
           "frame": 57
+        },
+        {
+          "key": "knight",
+          "frame": 57
+        },
+        {
+          "key": "knight",
+          "frame": 57
         }
       ],
-      "frameRate": 4,
+      "frameRate": 8,
       "repeat": 0
     },
     {

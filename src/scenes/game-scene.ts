@@ -92,17 +92,14 @@ export class GameScene extends Phaser.Scene {
   }
 
   private battle() {
-    this.player.animation(this.action);
-    this.player.on("animationcomplete", () => {
-      this.isPlayerReady = true;
+    this.player.once(Phaser.Animations.Events.ANIMATION_START, () => {
+      this.enemy.battle();
     });
 
-    this.time.addEvent({
-      delay: 300,
-      callback: () => {
-        this.enemy.battle();
-      },
-      loop: false,
+    this.player.animation(this.action);
+
+    this.player.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+      this.isPlayerReady = true;
     });
   }
 }
